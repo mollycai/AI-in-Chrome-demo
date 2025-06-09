@@ -1,0 +1,65 @@
+/* 全局初始化 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 设置基础字体和文本属性 */
+html {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  tab-size: 4;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background-color: #fff;
+  color: #000;
+  text-rendering: optimizeLegibility;
+}
+
+/* 移除列表默认样式 */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 移除超链接默认样式 */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 图片默认最大宽度 */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 表单元素字体继承 */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 移除按钮默认样式 */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* 表格边框合并 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
