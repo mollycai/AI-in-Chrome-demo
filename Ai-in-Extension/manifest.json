@@ -8,7 +8,8 @@
     "AkGcfoMTs5K71isPlCiY033XA9HKSjUJvPCF6K56eqY7mAUAsR7NDbmIWDjomLgCREuOS38XAuafVTz209utDwQAAABzeyJvcmlnaW4iOiJjaHJvbWUtZXh0ZW5zaW9uOi8vamdrYm1sZmZlYWRtZWZqZmdrY2tmYnBja3Bvb2loY2UiLCJmZWF0dXJlIjoiQUlTdW1tYXJpemF0aW9uQVBJIiwiZXhwaXJ5IjoxNzUzMTQyNDAwfQ=="
   ],
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "background.js",
+    "type": "module"
   },
   "permissions": ["tabs", "scripting", "sidePanel", "storage"],
   "host_permissions": ["http://*/*", "https://*/*"],

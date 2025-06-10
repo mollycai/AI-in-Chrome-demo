@@ -66,12 +66,11 @@ async function generateSummary(text) {
       length: length.value
     };
 
-    const availability = await Summarizer.availability();
     let summarizer;
-    if (availability === 'unavailable') {
+    if (!'Summarizer' in self) {
       return 'Summarizer API is not available';
     }
-    if (availability === 'available') {
+    if ('Summarizer' in self) {
       // The Summarizer API can be used immediately .
       summarizer = await Summarizer.create(options);
     } else {
