@@ -11,11 +11,6 @@ const routes = [
     component: () => import('@/pages/Writer.vue')
   },
   {
-    path: '/summarizer',
-    name: 'Summarizer',
-    component: () => import('@/pages/Summarizer.vue')
-  },
-  {
     path: '/prompt',
     name: 'Prompt',
     component: () => import('@/pages/Prompt.vue')
