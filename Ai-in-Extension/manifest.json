@@ -11,7 +11,12 @@
     "service_worker": "background.js",
     "type": "module"
   },
-  "permissions": ["tabs", "scripting", "sidePanel", "storage"],
+  "permissions": ["tabs", "activeTab", "scripting", "sidePanel", "storage"],
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "js": ["scripts/extract-content.js"],
+    "run_at": "document_end"
+  }],
   "host_permissions": ["http://*/*", "https://*/*"],
   "side_panel": {
     "default_path": "sidepanel/index.html"

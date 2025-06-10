@@ -8,6 +8,14 @@ chrome.tabs.onActivated.addListener((activeInfo) => {
 chrome.tabs.onUpdated.addListener(async (tabId) => {
   showSummary(tabId);
 });
+chrome.runtime.onMessage.addListener((message) => {
+  console.log('message', message)
+  if (message.type === 'selected-content') {
+    chrome.storage.session.set({
+      pageContent: message.content
+    });
+  }
+});
 
 async function showSummary(tabId) {
   const tab = await chrome.tabs.get(tabId);
@@ -17,10 +25,9 @@ async function showSummary(tabId) {
   const injection = await chrome.scripting.executeScript({
     target: { tabId },
     files: ['scripts/extract-content.js']
+  }).catch(e => {
+    console.error('inject script failed:', e);
   });
-  if (!injection?.[0]?.result) {
-    console.error('Content extraction failed');
-    return;
-  }
-  chrome.storage.session.set({ pageContent: injection[0].result });
+  console.log(injection)
+  await chrome.storage.session.set({ pageContent: injection[0].result });
 }
