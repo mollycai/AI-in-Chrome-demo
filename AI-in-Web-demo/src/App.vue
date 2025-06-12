@@ -29,7 +29,6 @@ import { useRouter, useRoute } from "vue-router";
 
 const menuItems = ref([
   { index: "/writer", title: "Writer API" },
-  { index: "/summarizer", title: "Summarizer API" },
   { index: "/prompt", title: "Prompt API" },
   { index: "/translator", title: "Translator API" },
 ]);
